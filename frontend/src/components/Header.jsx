@@ -39,19 +39,19 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-0">
             {navItems.map((item) => (
               <div key={item.label} className="relative group">
                 <Link
                   to={item.path}
-                  className={`flex items-center gap-1 px-3 py-2 text-[13.5px] font-medium tracking-wide transition-colors ${
+                  className={`flex items-center gap-1 px-2.5 py-2 text-[12.5px] font-medium tracking-wide whitespace-nowrap transition-colors ${
                     location.pathname === item.path
                       ? 'text-[#f47920]'
                       : 'text-white hover:text-[#f47920]'
                   }`}
                 >
                   {item.label}
-                  {item.children && <ChevronDown size={14} />}
+                  {item.children && <ChevronDown size={13} />}
                 </Link>
                 {item.children && (
                   <div className="absolute left-0 top-full mt-0 min-w-[220px] bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -71,7 +71,7 @@ export default function Header() {
 
             <Link
               to="/contact"
-              className="ml-3 px-5 py-2.5 bg-[#f47920] hover:bg-[#e06710] text-white text-[13px] font-semibold tracking-wide transition-colors rounded-sm"
+              className="ml-3 px-4 py-2.5 bg-[#f47920] hover:bg-[#e06710] text-white text-[12px] font-semibold tracking-wide whitespace-nowrap transition-colors rounded-sm"
             >
               Join #TeamDevendra
             </Link>

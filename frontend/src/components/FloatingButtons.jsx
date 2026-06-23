@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUp, MessageCircle } from 'lucide-react';
+import { SOCIAL_LINKS } from './SocialBar';
 
 export default function FloatingButtons() {
   const [show, setShow] = useState(false);
@@ -11,9 +12,10 @@ export default function FloatingButtons() {
   return (
     <>
       <a
-        href="#whatsapp"
-        onClick={(e) => e.preventDefault()}
-        aria-label="WhatsApp"
+        href={SOCIAL_LINKS.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp Channel"
         className="fixed bottom-5 right-5 z-40 w-13 h-13 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-xl transition-colors"
         style={{ width: 52, height: 52 }}
       >

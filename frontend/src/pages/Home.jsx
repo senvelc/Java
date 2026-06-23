@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, ChevronDown, Facebook, Twitter, Youtube, Play } from 'lucide-react';
+import { ArrowRight, Calendar, ChevronDown, Facebook, Youtube, Play } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
+import { SOCIAL_LINKS } from '../components/SocialBar';
 import { aboutShort, newsItems, portraitImage, videos } from '../data/content';
 
 export default function Home() {
@@ -119,44 +120,46 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Facebook card */}
-            <div className="bg-white rounded-sm shadow-sm overflow-hidden border-t-4 border-[#1877f2]">
+            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="block bg-white rounded-sm shadow-sm overflow-hidden border-t-4 border-[#1877f2] hover:shadow-lg transition-shadow">
               <div className="p-5 border-b border-gray-100 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[#1877f2] font-bold">
                   <Facebook size={20} /> Facebook
                 </div>
-                <button className="px-3 py-1 bg-[#1877f2] text-white text-[12px] rounded-sm font-medium">
+                <span className="px-3 py-1 bg-[#1877f2] text-white text-[12px] rounded-sm font-medium">
                   Follow
-                </button>
+                </span>
               </div>
               <div className="p-5 space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#f47920] text-white flex items-center justify-center font-bold flex-shrink-0">DF</div>
                   <div>
                     <p className="font-semibold text-[14px]">Devendra Fadnavis</p>
-                    <p className="text-[12px] text-gray-500">3 hours ago</p>
+                    <p className="text-[12px] text-gray-500">Public figure</p>
                   </div>
                 </div>
                 <p className="text-[13.5px] text-gray-700 leading-relaxed">
-                  Tributes to a distinguished leader, scholar and founder of Bharatiya Jan Sangh, Dr. Syama Prasad Mookerjee, on his Balidan Din.
+                  Follow the official Facebook page for the latest updates, photos and announcements.
                 </p>
                 <p className="text-[12px] text-[#1877f2]">#DevendraFadnavis #Maharashtra</p>
                 <div className="flex items-center justify-between text-[12px] text-gray-500 pt-3 border-t border-gray-100">
-                  <span>918 Likes</span>
-                  <span>216 Comments</span>
-                  <span>106 Shares</span>
+                  <span>9.6M followers</span>
+                  <span>Verified</span>
                 </div>
               </div>
-            </div>
+            </a>
 
-            {/* Twitter card */}
-            <div className="bg-white rounded-sm shadow-sm overflow-hidden border-t-4 border-black">
+            {/* Twitter / X card */}
+            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="block bg-white rounded-sm shadow-sm overflow-hidden border-t-4 border-black hover:shadow-lg transition-shadow">
               <div className="p-5 border-b border-gray-100 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-black font-bold">
-                  <Twitter size={20} /> Twitter
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.93l-5.4-7.06L4.4 22H1.14l8.02-9.17L1 2h7.06l4.88 6.46L18.244 2Zm-1.22 18h1.86L7.06 4H5.1l11.92 16Z" />
+                  </svg>
+                  Twitter
                 </div>
-                <button className="px-3 py-1 bg-black text-white text-[12px] rounded-sm font-medium">
+                <span className="px-3 py-1 bg-black text-white text-[12px] rounded-sm font-medium">
                   Follow
-                </button>
+                </span>
               </div>
               <div className="p-5 space-y-4">
                 <div className="flex items-start gap-3">
@@ -167,26 +170,25 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-[13.5px] text-gray-700 leading-relaxed">
-                  Budget Session 2026 - Key Highlights presented before the Maharashtra Vidhan Sabha.
+                  Follow on X for live updates from the Chief Minister&apos;s office.
                 </p>
-                <p className="text-[12px] text-blue-500">#Maharashtra #Mumbai #Budget2026</p>
+                <p className="text-[12px] text-blue-500">#Maharashtra #Mumbai</p>
                 <div className="flex items-center justify-between text-[12px] text-gray-500 pt-3 border-t border-gray-100">
-                  <span>937 Likes</span>
-                  <span>274 Replies</span>
-                  <span>10:09 AM</span>
+                  <span>Official handle</span>
+                  <span>Verified</span>
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* YouTube card */}
-            <div className="bg-white rounded-sm shadow-sm overflow-hidden border-t-4 border-[#ff0000]">
+            <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="block bg-white rounded-sm shadow-sm overflow-hidden border-t-4 border-[#ff0000] hover:shadow-lg transition-shadow">
               <div className="p-5 border-b border-gray-100 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[#ff0000] font-bold">
                   <Youtube size={20} /> YouTube
                 </div>
-                <button className="px-3 py-1 bg-[#ff0000] text-white text-[12px] rounded-sm font-medium">
+                <span className="px-3 py-1 bg-[#ff0000] text-white text-[12px] rounded-sm font-medium">
                   Subscribe
-                </button>
+                </span>
               </div>
               <div className="relative aspect-video bg-black overflow-hidden group cursor-pointer">
                 <img src={videos[0].thumb} alt={videos[0].title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" />
@@ -200,7 +202,7 @@ export default function Home() {
                 <p className="text-[13.5px] font-medium text-gray-800 line-clamp-2">{videos[0].title}</p>
                 <p className="text-[11.5px] text-gray-500 mt-1">1.48M subscribers</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -230,8 +232,9 @@ export default function Home() {
               Join Team Devendra
             </Link>
             <a
-              href="#whatsapp"
-              onClick={(e) => e.preventDefault()}
+              href={SOCIAL_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-7 py-3 bg-white hover:bg-gray-100 text-[#1a2632] text-[13px] font-semibold tracking-wider uppercase transition-colors rounded-sm"
             >
               Join WhatsApp Channel
